@@ -1,0 +1,273 @@
+:root{
+    --primary-text-color: #111111;
+    --secondary-text-color: #333333;
+    --bg-color: rgb(245, 245, 245);
+    --content-bg-color: rgb(255, 255, 255);
+    --btn-color: red;
+    --btn-hover-color: rgb(161, 5, 5);
+}
+
+@media (perfers-color-scheme: dark){
+    :root{
+        --primary-text-color: rgb(245, 245, 245);
+        --secondary-text-color: rgb(255, 255, 255);
+        --bg-color: #111111;
+        --content-bg-color: #333333;
+        --btn-color: rgb(161, 5, 5);
+        --btn-hover-color: red;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial';
+    /* outline: 1px solid red; */
+}
+
+body {
+    background-color: var(--bg-color);
+    width: 100vw;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0 20px;
+}
+
+.hamburger-menu {
+    display: none;
+}
+
+nav {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    display: grid;
+    list-style: none;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 800px;
+}
+
+li a {
+    text-align: center;
+    padding: 15px 20px;
+    display: block;
+    text-decoration: none;
+    color: var(--secondary-text-color);
+    background-color: var(--content-bg-color);
+    border-radius: 5px;
+}
+
+li a:hover {
+    outline: 3px solid rgba(0, 0, 0, 0.2);
+    color: var(--primary-text-color);
+    font-weight: bold;
+}
+
+.grid {
+    max-width: 800px;
+    margin: 25px auto;
+    background-color: var(--content-bg-color);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 5px;
+    position: relative;
+}
+
+.text-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    text-align: end;
+    align-items: end;
+    min-height: 230px;
+    position: relative;
+}
+
+.text-content h1 {
+    font-size: 1.5rem;
+}
+
+.text-content a {
+    background-color: var(--btn-color);
+    padding: 10px 20px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    text-decoration: none;
+    color: var(--content-bg-color);
+    font-size: 0.8rem;
+    position: relative;
+}
+
+.text-content p {
+    letter-spacing: 0.5px;
+    color: var(--secondary-text-color);
+}
+
+.text-content a:hover {
+    background-color: var(--btn-hover-color)
+}
+
+/* .bike-image{
+    position: relative;
+} */
+
+.bike-image img{
+    object-fit: cover;
+}
+
+.text-content::before{
+    content: "";
+    width: 75px;
+    height: 4px;
+    background-image: linear-gradient(to right, rgb(0, 0, 0) 30%, rgb(211, 0, 0));
+    position: absolute;
+    top: 25px;
+    right: -25px;
+}
+
+.vantagens {
+    min-height: 280px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.vantagens-title {
+    display: flex;
+    align-items: center;
+    background: url("./img/onda.svg");
+    background-size: 700px;
+}
+
+.vantagens-title h1 {
+    color: var(--primary-text-color);
+    text-transform: uppercase;
+    font-size: 3rem;
+    text-align: center;
+    padding: 15px;
+}
+
+.vantagem-item {
+    padding: 10px;
+    display: grid;
+    gap: 4px 8px;
+    justify-content: start;
+}
+
+.vantagem-item h1 {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.vantagem-item p {
+    grid-column: 2;
+}
+
+footer {
+    position: relative;
+    bottom: 0px;
+    padding: 25px;
+    background-color: var(--content-bg-color);
+    text-align: center;
+}
+
+.vantagens .vantagem-item:nth-child(odd) {
+    background-color: var(--bg-color);
+}
+
+.vantagens .vantagem-item:hover {
+    border-left: 4px solid red;
+}
+
+@media (max-width: 600px) {
+    nav {
+        display: none;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    body::-webkit-scrollbar {
+        display: none;
+    }
+
+    .grid {
+        margin-top: 50px;
+        grid-template-columns: 1fr;
+    }
+
+    a.botao {
+        display: block;
+        width: 100%;
+        text-align: center;
+        align-self: center;
+        font-size: 1rem;
+    }
+
+    .text-content {
+        padding: 25px;
+        align-items: start;
+        text-align: start;
+    }
+
+    .text-content h1 {
+        font-size: 1.75rem;
+    }
+
+    .text-content p {
+        text-indent: 1rem;
+        line-height: 1.25rem;
+    }
+
+    .bike-image img{
+       background-size: cover;
+       background-repeat: no-repeat;
+       max-width: 100%;
+       display: block;
+    }
+
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: fixed;
+        width: 100%;
+        height: 40px;
+        background-color: var(--content-bg-color);
+        z-index: 999;
+        padding: 25px;
+        box-shadow: 0px 1px 2px rgba(126, 126, 126, 0.5);
+        margin: 0;
+    }
+
+    .hamburger-menu {
+        display: block;
+        color: var(--primary-text-color);
+    }
+
+    .vantagens-title h1 {
+        padding: 25px 0px 0px;
+    }
+
+    .text-content::before{
+        display: none;
+    }
+}
